@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-comerce web</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row align-item">
+                <div class="e-img">
+                    <img src="/img/e1.jpg" alt="" srcset="">
+                </div>
+                <div class="e-list">
+                    <ul class="row">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="home.html">About</a></li>
+                        <li><a href="home.html">Services</a></li>
+                        <li><a href="home.html">contact us</a></li>
+                        <li><a href="home.html">Blog</a></li>
+                        <li><a href="home.html">portfilo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+    <div id="slider">
+    <div class="slides">
+        <img src="img/banner.jpg" width="100%" />
+    </div>
+
+    <div class="slides">
+        <img src="img/banner2.jpg" width="100%" />
+    </div>
+
+    <div class="slides">
+        <img src="img/banner3.jpg" width="100%" />
+    </div>
+
+    <div class="slides">
+        <img src="img/banner4.jpg" width="100%" />
+    </div>
+    <div id="dot"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    </div>
+    </section>
+     <section>
+           <div class="container">
+                <div class="grid" id="additems">
+                 
+                </div>
+           </div> 
+     </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+           $(document).ready(function(){
+                $(".owl-carousel").owlCarousel({
+                    loop:true,
+                    margin:10,
+                    nav:true,
+                    dots:true,
+                });
+            });
+    </script>
+    <script>
+        var index = 0;
+        var slides = document.querySelectorAll(".slides");
+        var dot = document.querySelectorAll(".dot");
+
+function changeSlide() {
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+
+  if (index > slides.length - 1) {
+    index = 0;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    dot[i].classList.remove("active");
+  }
+
+  slides[index].style.display = "block";
+  dot[index].classList.add("active");
+
+  index++;
+
+  setTimeout(changeSlide, 2000);
+}
+
+changeSlide();
+
+    </script>
+</body>
+<script src="js/home.js"></script>
+
+</html>
